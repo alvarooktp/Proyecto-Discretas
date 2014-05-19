@@ -35,6 +35,11 @@ void VentanaPrincipal::on_pushButton_clicked()
             const int ultima_columna = ui->tableWidget->columnCount();
             ui->tableWidget->insertColumn((ultima_columna));
 
+            const int ultima_fila2 = ui->tableWidget_2->rowCount();
+            ui->tableWidget_2->insertRow((ultima_fila2));
+            const int ultima_columna2 = ui->tableWidget_2->columnCount();
+            ui->tableWidget_2->insertColumn((ultima_columna2));
+
         }
 
         for(int i=0; i < tam ;i++){
@@ -59,19 +64,24 @@ void VentanaPrincipal::on_pushButton_clicked()
 
 void VentanaPrincipal::on_pushButton_2_clicked()
 {
+
+}
+
+void VentanaPrincipal::on_pushButton_3_clicked()
+{
     int tam= ui->lineEdit->text().toInt();
     int matriz[tam][tam];
     int a=99;
+    QString temp="";
     QTableWidgetItem *p;
 
     for(int i=0; i < tam ;i++){
         for(int j=0; j < tam ;j++){
-            p= ui->tableWidget->item(i,j);
-            matriz[i][j]= ;
+            p = ui->tableWidget->(i,j);
+            //matriz[i][j]= p->text().toInt();
+            temp+=p->text();
         }
+        temp+="\n";
     }
-    //a=matriz[1][0];
-    //QString s=(QString)a;
-
-    //QMessageBox::information(this,"Matriz capturada",s);
+    QMessageBox::information(this,"Matriz capturada",temp);
 }
